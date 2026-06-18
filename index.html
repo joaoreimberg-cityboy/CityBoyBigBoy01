@@ -1,180 +1,88 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descubra Seu Perfume Ideal</title>
-
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, sans-serif;
-        }
-
-        body{
-            background:linear-gradient(135deg,#f8d7ff,#ffe7c7);
-            min-height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-        }
-
-        .container{
-            background:white;
-            width:90%;
-            max-width:600px;
-            padding:30px;
-            border-radius:20px;
-            box-shadow:0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        h1{
-            text-align:center;
-            margin-bottom:10px;
-        }
-
-        p{
-            text-align:center;
-            margin-bottom:20px;
-        }
-
-        form{
-            display:flex;
-            flex-direction:column;
-            gap:12px;
-        }
-
-        label{
-            background:#f5f5f5;
-            padding:12px;
-            border-radius:10px;
-            cursor:pointer;
-        }
-
-        button{
-            margin-top:15px;
-            padding:15px;
-            border:none;
-            border-radius:10px;
-            background:#8b5cf6;
-            color:white;
-            font-size:16px;
-            cursor:pointer;
-        }
-
-        button:hover{
-            background:#6d28d9;
-        }
-
-        #resultado{
-            margin-top:25px;
-            padding:20px;
-            border-radius:10px;
-            background:#fafafa;
-            display:none;
-        }
-
-        img{
-            width:100%;
-            border-radius:12px;
-            margin-bottom:15px;
-        }
-    </style>
+    <title>Document</title>
 </head>
-
 <body>
+    <h1>O QUE VOCÊ PRECISA SABER A NTES DE COMECAR A COMPRAR PEDAIS</h1>
+    <img src="pedalboard.jpg"> </img src>
+  <p>
+    Se você está começando a explorar o mundo dos pedais de guitarra, este
+     site é o lugar certo para você. Ele traz apenas o que é realmente essencial saber antes de comprar seu pedal, 
+     sem complicações ou informações desnecessárias. Desde os tipos de efeitos, como overdrive, delay e chorus, até dicas sobre 
+     combinações e ajustes básicos, você vai encontrar tudo de forma clara e objetiva. Perfeito para guitarristas que querem fazer 
+     escolhas conscientes e montar seu som sem perder tempo com detalhes confusos.
+    </p>  
+  <h2>TIPOS DE PEDAIS</h2>
+  <h3>GANHO</h3>
+  <img src="distorção.jpeg">
+  </img src>
+  <p>Os pedais de ganho são responsáveis por adicionar saturação e distorção ao sinal da guitarra, sendo fundamentais para a construção
+     do timbre em diversos estilos musicais.
+</p>
+<h4>boost</h4>
+<p>Os pedais de boost aumentam o volume do sinal sem alterar significativamente o timbre. São usados para destacar solos ou empurrar
+   outros pedais e amplificadores para obter mais ganho.
+</p>
+<h4>Overdrive</h4>
+<p>O overdrive simula a saturação natural de amplificadores valvulados quando operam em volumes elevados. Produz um som quente, dinâmico
+   e responsivo à intensidade da palhetada. É muito utilizado em blues, rock clássico, country e música cristã contemporânea.</p>
+<h4>Distortion</h4>
+<p>A distortion oferece uma saturação mais intensa e comprimida, com maior sustain e agressividade. É amplamente utilizada em hard rock
+punk rock e metal.
+</p>
+<h4>Fuzz</h4>
+<p>O fuzz foi um dos primeiros efeitos de distorção criados. Seu som é extremamente saturado, encorpado e característico, sendo muito associado
+   ao rock psicodélico, garage rock e ao rock dos anos 60 e 70.</p>
 
-<div class="container">
 
-    <img src="images.jpeg" alt="Perfume">
+<h3>modulação</h3>
+<img src="chorus.webp"> </img src>
+<p>Os pedais de modulação modificam o sinal original da guitarra, criando movimento, profundidade e texturas sonoras.
+</p>
+<h4>Chorus</h4>
+<p>O chorus cria a sensação de que várias guitarras estão tocando simultaneamente, deixando o som mais cheio e brilhante. É comum em pop, rock alternativo, worship e músicas dos anos 80.
+</p>
+<h4>Flanger</h4>
+<p>Semelhante ao chorus, porém mais intenso e metálico. É bastante encontrado em hard rock, rock progressivo e algumas produções de metal.
+</p>
+<h4>Phaser</h4>
+<p>O phaser gera uma varredura suave nas frequências, criando um efeito espacial e psicodélico. É muito utilizado em funk, rock clássico e música experimental.</p>
+<h4>Tremolo</h4>
+<p>O tremolo altera o volume do sinal de forma periódica, criando uma pulsação rítmica. É comum em surf music, blues e indie rock.
+</p>
 
-    <h1>Descubra Seu Perfume Ideal</h1>
-    <p>Escolha as notas que mais combinam com você:</p>
+<h3>Ambiência</h3>
+<p>Esses pedais criam sensação de espaço e profundidade, tornando o som mais rico e envolvente.</p>
+<h4>Delay</h4>
+<p>O delay repete o sinal da guitarra após determinado intervalo de tempo, criando ecos. É amplamente utilizado em solos, rock, worship, música ambiente e estilos experimentais.</p>
+<h4>Reverb</h4>
+<p>O reverb simula a reverberação natural de ambientes como salas, teatros e igrejas. É um dos efeitos mais utilizados por guitarristas de praticamente todos os estilos musicais.
+</p>
 
-    <form id="quiz">
 
-        <label><input type="checkbox" value="floral"> Floral</label>
-        <label><input type="checkbox" value="citrico"> Cítrico</label>
-        <label><input type="checkbox" value="amadeirado"> Amadeirado</label>
-        <label><input type="checkbox" value="oriental"> Oriental</label>
-        <label><input type="checkbox" value="doce"> Doce/Gourmand</label>
-        <label><input type="checkbox" value="aquatico"> Aquático</label>
+<h3>Pedais de Dinâmica e Controle</h3>
+<p>pedais de efeitos que controlam o volume e a resposta do som da guitarra, ou seja, a dinâmica do áudio (o quanto o som varia entre mais fraco e mais forte).</p>
+<h4>Compressor</h4>
+<p>O compressor reduz as diferenças de volume entre as notas, aumentando o sustain e proporcionando maior equilíbrio ao timbre. Muito usado em country, funk, pop e rock.</p>
+<h4>Equalizador (EQ)</h4>
+<p>Permite ajustar frequências graves, médias e agudas, ajudando a moldar o timbre e destacar a guitarra na mixagem.</p>
+<h4>Noise Gate</h4>
+<p>Reduz ruídos indesejados gerados por altos níveis de ganho, sendo especialmente útil para músicos de rock e metal.</p>
 
-        <button type="submit">Descobrir</button>
-    </form>
 
-    <div id="resultado"></div>
-
-</div>
-
-<script>
-const perfis = {
-    floral: {
-        titulo: "Perfil Floral Elegante",
-        descricao: "Você gosta de perfumes delicados, românticos e sofisticados.",
-        notas: "Rosa, Jasmim, Peônia e Lírio."
-    },
-    citrico: {
-        titulo: "Perfil Cítrico Energético",
-        descricao: "Você busca frescor e leveza.",
-        notas: "Bergamota, Limão Siciliano e Mandarina."
-    },
-    amadeirado: {
-        titulo: "Perfil Amadeirado Sofisticado",
-        descricao: "Você prefere perfumes marcantes e elegantes.",
-        notas: "Cedro, Sândalo e Vetiver."
-    },
-    oriental: {
-        titulo: "Perfil Oriental Sedutor",
-        descricao: "Você gosta de fragrâncias intensas e envolventes.",
-        notas: "Baunilha, Âmbar e Especiarias."
-    },
-    doce: {
-        titulo: "Perfil Gourmand",
-        descricao: "Você aprecia aromas doces e confortáveis.",
-        notas: "Caramelo, Chocolate e Baunilha."
-    },
-    aquatico: {
-        titulo: "Perfil Aquático",
-        descricao: "Você gosta de sensação de limpeza e liberdade.",
-        notas: "Notas marinhas, algas e brisa oceânica."
-    }
-};
-
-document.getElementById("quiz").addEventListener("submit", function(e){
-    e.preventDefault();
-
-    const selecionados = Array.from(
-        document.querySelectorAll("input:checked")
-    ).map(el => el.value);
-
-    const area = document.getElementById("resultado");
-    area.style.display = "block";
-
-    if (selecionados.length === 0) {
-        area.innerHTML = "<h2>Selecione pelo menos uma nota.</h2>";
-        return;
-    }
-
-    const principal = selecionados[0];
-    const perfil = perfis[principal];
-
-    if (!perfil) {
-        area.innerHTML = "<h2>Perfil nao encontrado.</h2>";
-        return;
-    }
-
-    area.innerHTML = `
-        <h2>${perfil.titulo}</h2>
-        <p>${perfil.descricao}</p>
-        <strong>Notas recomendadas:</strong>
-        <p>${perfil.notas}</p>
-    `;
-});
-</script>
-
+<h3>Pedais de Pitch</h3>
+<p>é um pedal de efeito que muda a altura das notas que você toca (o “pitch” = tom/agudo ou grave do som).</p>
+<h4>Octaver
+</h4>
+<p>Adiciona notas uma ou mais oitavas acima ou abaixo da nota original, enriquecendo o som da guitarra.</p>
+<h4>Pitch Shifter</h4>
+<p>Altera a afinação das notas em intervalos definidos, possibilitando novas sonoridades sem a necessidade de trocar a afinação do instrumento.</p>
+<h4>Harmonizer</h4>
+<p>Cria harmonias automáticas com base na nota tocada, sendo muito utilizado em solos e arranjos mais elaborados.
+</p>
 </body>
 </html>
+
