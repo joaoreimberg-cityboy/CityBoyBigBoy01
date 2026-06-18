@@ -1,57 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra Seu Perfume Ideal</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:linear-gradient(135deg,#f8d7ff,#ffe7c7);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .container{
+            background:white;
+            width:90%;
+            max-width:600px;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:10px;
+        }
+
+        p{
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        form{
+            display:flex;
+            flex-direction:column;
+            gap:12px;
+        }
+
+        label{
+            background:#f5f5f5;
+            padding:12px;
+            border-radius:10px;
+            cursor:pointer;
+        }
+
+        button{
+            margin-top:15px;
+            padding:15px;
+            border:none;
+            border-radius:10px;
+            background:#8b5cf6;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#6d28d9;
+        }
+
+        #resultado{
+            margin-top:25px;
+            padding:20px;
+            border-radius:10px;
+            background:#fafafa;
+            display:none;
+        }
+
+        img{
+            width:100%;
+            border-radius:12px;
+            margin-bottom:15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <img src="images.jpeg" alt="Perfume">
+
+    <h1>Descubra Seu Perfume Ideal</h1>
+    <p>Escolha as notas que mais combinam com você:</p>
+
+    <form id="quiz">
+
+        <label><input type="checkbox" value="floral"> Floral</label>
+        <label><input type="checkbox" value="citrico"> Cítrico</label>
+        <label><input type="checkbox" value="amadeirado"> Amadeirado</label>
+        <label><input type="checkbox" value="oriental"> Oriental</label>
+        <label><input type="checkbox" value="doce"> Doce/Gourmand</label>
+        <label><input type="checkbox" value="aquatico"> Aquático</label>
+
+        <button type="submit">Descobrir</button>
+    </form>
+
+    <div id="resultado"></div>
+
+</div>
+
+<script>
 const perfis = {
-<img src="images.jpeg"
     floral: {
         titulo: "Perfil Floral Elegante",
-        descricao: "voce gosta de perfumes delicados, romanticos e sofisticados.",
-        notas: "Rosa, Jasmim, Peonia e Lirio."
+        descricao: "Você gosta de perfumes delicados, românticos e sofisticados.",
+        notas: "Rosa, Jasmim, Peônia e Lírio."
     },
     citrico: {
-        titulo: "Perfil Citrico Energetico",
-        descricao: "Voce busca frescor e leveza.",
-        notas: "Bergamota, Limao Siciliano e Mandarina."
+        titulo: "Perfil Cítrico Energético",
+        descricao: "Você busca frescor e leveza.",
+        notas: "Bergamota, Limão Siciliano e Mandarina."
     },
     amadeirado: {
         titulo: "Perfil Amadeirado Sofisticado",
-        descricao: "Voce prefere perfumes marcantes e elegantes.",
-        notas: "Cedro, Sandalo e Vetiver."
+        descricao: "Você prefere perfumes marcantes e elegantes.",
+        notas: "Cedro, Sândalo e Vetiver."
     },
     oriental: {
         titulo: "Perfil Oriental Sedutor",
-        descricao: "Voce gosta de fragrancias intensas e envolventes.",
-        notas: "Baunilha, ambar e Especiarias."
+        descricao: "Você gosta de fragrâncias intensas e envolventes.",
+        notas: "Baunilha, Âmbar e Especiarias."
     },
     doce: {
         titulo: "Perfil Gourmand",
-        descricao: "Voce aprecia aromas doces e confortaveis.",
+        descricao: "Você aprecia aromas doces e confortáveis.",
         notas: "Caramelo, Chocolate e Baunilha."
     },
     aquatico: {
-        titulo: "Perfil Aquatico",
-        descricao: "Voce gosta de sensacao de limpeza e liberdade.",
-        notas: "Notas marinhas, algas e brisa oceanica."
+        titulo: "Perfil Aquático",
+        descricao: "Você gosta de sensação de limpeza e liberdade.",
+        notas: "Notas marinhas, algas e brisa oceânica."
     }
 };
 
-document.getElementById("quiz").addEventListener("submit", (e) => {
+document.getElementById("quiz").addEventListener("submit", function(e){
     e.preventDefault();
 
-    const selecionados = Array.from(document.querySelectorAll("input:checked"))
-        .map(el => el.value);
+    const selecionados = Array.from(
+        document.querySelectorAll("input:checked")
+    ).map(el => el.value);
 
     const area = document.getElementById("resultado");
     area.style.display = "block";
 
     if (selecionados.length === 0) {
-        area.innerHTML = `<h2>Selecione pelo menos uma nota.</h2>`;
+        area.innerHTML = "<h2>Selecione pelo menos uma nota.</h2>";
         return;
     }
 
-    // Pega o primeiro selecionado como "perfil principal"
     const principal = selecionados[0];
     const perfil = perfis[principal];
 
     if (!perfil) {
-        area.innerHTML = `<h2>Perfil nao encontrado.</h2>`;
+        area.innerHTML = "<h2>Perfil nao encontrado.</h2>";
         return;
     }
 
@@ -62,3 +174,7 @@ document.getElementById("quiz").addEventListener("submit", (e) => {
         <p>${perfil.notas}</p>
     `;
 });
+</script>
+
+</body>
+</html>
