@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra Seu Perfume Ideal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1> Descubra Seu Perfume Ideal</h1>
+    <p>Escolha as notas que mais combinam com voce:</p>
+
+    <form id="quiz">
+
+        <label>
+            <input type="checkbox" value="floral">
+            Floral
+        </label>
+
+        <label>
+            <input type="checkbox" value="citrico">
+            Citrico
+        </label>
+
+        <label>
+            <input type="checkbox" value="amadeirado">
+            Amadeirado
+        </label>
+
+        <label>
+            <input type="checkbox" value="oriental">
+            Oriental
+        </label>
+
+        <label>
+            <input type="checkbox" value="doce">
+            Doce/Gourmand
+        </label>
+
+        <label>
+            <input type="checkbox" value="aquatico">
+            Aquatico
+        </label>
+
+        <button type="submit">
+            Descobrir
+        </button>
+
+    </form>
+
+    <div id="resultado"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#f8d7ff,#ffe7c7);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    background:white;
+    width:90%;
+    max-width:600px;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+p{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+label{
+    background:#f5f5f5;
+    padding:12px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+button{
+    margin-top:15px;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#8b5cf6;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#6d28d9;
+}
+
+#resultado{
+    margin-top:25px;
+    padding:20px;
+    border-radius:10px;
+    background:#fafafa;
+    display:none;
+}document.getElementById("quiz").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const selecionados = [...document.querySelectorAll("input:checked")]
+        .map(item => item.value);
+
+    let resultado = "";
+
+    if(selecionados.includes("floral")){
+        resultado = `
+        <h2> Perfil Floral Elegante</h2>
+        <p>Voce gosta de perfumes delicados, romanticos e sofisticados.</p>
+        <strong>Notas recomendadas:</strong>
+        <p>Rosa, Jasmim, Peonia e Lirio.</p>
+        `;
+    }
+
+    if(selecionados.includes("citrico")){
+        resultado = `
+        <h2> Perfil Citrico Energetico</h2>
+        <p>Voce busca frescor e leveza.</p>
+        <strong>Notas recomendadas:</strong>
+        <p>Bergamota, Limao Siciliano e Mandarina.</p>
+        `;
+    }
+
+    if(selecionados.includes("amadeirado")){
+        resultado = `
+        <h2> Perfil Amadeirado Sofisticado</h2>
+        <p>Voce prefere perfumes marcantes e elegantes.</p>
+        <strong>Notas recomendadas:</strong>
+        <p>Cedro, Sandalo e Vetiver.</p>
+        `;
+    }
+
+    if(selecionados.includes("oriental")){
+        resultado = `
+        <h2> Perfil Oriental Sedutor</h2>
+        <p>Voce gosta de fragrancias intensas e envolventes.</p>
+        <strong>Notas recomendadas:</strong>
+        <p>Baunilha, Ambar e Especiarias.</p>
+        `;
+    }
+
+    if(selecionados.includes("doce")){
+        resultado = `
+        <h2> Perfil Gourmand</h2>
+        <p>Voce aprecia aromas doces e confortaveis.</p>
+        <strong>Notas recomendadas:</strong>
+        <p>Caramelo, Chocolate e Baunilha.</p>
+        `;
+    }
+
+    if(selecionados.includes("aquatico")){
+        resultado = `
+        <h2> Perfil Aquatico</h2>
+        <p>Voce gosta de sensacao de limpeza e liberdade.</p>
+        <strong>Notas recomendadas:</strong>
+        <p>Notas Marinhas, Algas e Brisa Oceanica.</p>
+        `;
+    }
+
+    if(selecionados.length === 0){
+        resultado = `
+        <h2>Selecione pelo menos uma nota.</h2>
+        `;
+    }
+
+    const area = document.getElementById("resultado");
+
+    area.style.display = "block";
+    area.innerHTML = resultado;
+});
