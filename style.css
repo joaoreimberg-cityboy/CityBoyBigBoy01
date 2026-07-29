@@ -2,5 +2,6 @@ body{
     background-color:rgb(48, 33, 11);
 }
 h1{
+    font-style:italic;
     color: rgb(230, 230, 230);
 }
